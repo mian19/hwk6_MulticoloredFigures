@@ -18,22 +18,22 @@ class Task1ViewController: UIViewController {
         customView = UIView(frame: UIScreen.main.bounds)
         view = customView
         view.backgroundColor = .gray
-       
+        
         button = UIButton()
         button.layer.cornerRadius = button.frame.width / 2
         button.layer.masksToBounds = true
         button.backgroundColor = .red
         button.addTarget(self, action: #selector(onButtonClick), for: .touchUpInside)
-       
+        
         backButton = UIButton(frame: CGRect(x: view.bounds.midX-50, y: view.bounds.maxY-80, width: 100, height: 40))
         backButton.setTitle("Back", for: .normal)
         backButton.backgroundColor = .black
         backButton.addTarget(self, action: #selector(onBackButtonClick), for: .touchUpInside)
+       
         view.addSubview(button)
         view.addSubview(backButton)
         
     }
-
     
     override func viewWillLayoutSubviews() {
         button.frame = generateCoordinatesForButton()
@@ -54,7 +54,6 @@ class Task1ViewController: UIViewController {
     }
     
     private func generateCoordinatesForButton() -> CGRect{
-        
         let width = view.safeAreaLayoutGuide.layoutFrame.size.width
         let height = view.safeAreaLayoutGuide.layoutFrame.size.height
         let diameter = generateSizeForButton()
@@ -68,6 +67,5 @@ class Task1ViewController: UIViewController {
     private func generateColor() -> UIColor {
         UIColor(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: 1.0)
     }
-
-   
+    
 }
