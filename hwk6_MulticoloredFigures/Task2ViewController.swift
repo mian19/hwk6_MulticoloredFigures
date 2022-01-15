@@ -25,22 +25,18 @@ class Task2ViewController:  UIViewController {
         viewForSquares = UIView()
         viewForSquares.backgroundColor = .white
         
-        backButton = UIButton(frame: CGRect(x: view.bounds.midX-170, y: view.bounds.maxY - 70, width: 100, height: 40))
+        backButton = UIButton()
         backButton.setTitle("Back", for: .normal)
         backButton.backgroundColor = .black
         backButton.addTarget(self, action: #selector(onBackButton), for: .touchUpInside)
         
         fillButton = UIButton()
-        let fillButtonRect = backButton.frame.offsetBy(dx: 120, dy: 0)
-        fillButton.frame = fillButtonRect
         fillButton.setTitle("Fill", for: .normal)
         fillButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         fillButton.backgroundColor = UIColor(red: 0.3961, green: 0.2078, blue: 0.749, alpha: 1.0)
         fillButton.addTarget(self, action: #selector(onFillButton), for: .touchUpInside)
         
         clearButton = UIButton()
-        let clearButtonRect = fillButton.frame.offsetBy(dx: 120, dy: 0)
-        clearButton.frame = clearButtonRect
         clearButton.setTitle("Clear", for: .normal)
         clearButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         clearButton.backgroundColor = UIColor(red: 0.2039, green: 0.5098, blue: 0.1412, alpha: 1.0)
@@ -53,7 +49,23 @@ class Task2ViewController:  UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        viewForSquares.frame = CGRect(x: view.safeAreaLayoutGuide.layoutFrame.minX, y: view.safeAreaLayoutGuide.layoutFrame.minY, width: view.bounds.width, height: view.safeAreaLayoutGuide.layoutFrame.maxY-100)
+        viewForSquares.frame = CGRect(x: view.safeAreaLayoutGuide.layoutFrame.minX, y: view.safeAreaLayoutGuide.layoutFrame.minY, width: view.bounds.width, height: view.bounds.maxY - 70)
+        
+        backButton.frame = CGRect(x: view.bounds.midX-170, y: view.bounds.maxY - 45, width: 100, height: 40)
+        let fillButtonRect = backButton.frame.offsetBy(dx: 120, dy: 0)
+        fillButton.frame = fillButtonRect
+        
+        let clearButtonRect = fillButton.frame.offsetBy(dx: 120, dy: 0)
+        clearButton.frame = clearButtonRect
+        
+        
+        if viewForSquares.subviews != [] {
+            for elem in viewForSquares.subviews {
+                elem.removeFromSuperview()
+            }
+            onFillButton()
+        }
+       
     }
     
     @objc func onBackButton() {
