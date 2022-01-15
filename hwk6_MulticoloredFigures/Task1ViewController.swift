@@ -41,7 +41,7 @@ class Task1ViewController: UIViewController {
         button.layer.masksToBounds = true
         button.backgroundColor = generateColor()
         
-        backButton.frame = CGRect(x: view.bounds.midX-50, y: view.bounds.maxY-80, width: 100, height: 40)
+        backButton.frame = CGRect(x: view.bounds.midX - 50, y: view.bounds.maxY - 80, width: 100, height: 40)
     }
     
     @objc func onButtonClick(button: UIButton) {
@@ -64,7 +64,7 @@ class Task1ViewController: UIViewController {
         let width = view.bounds.maxX
         let height = view.bounds.maxY - diameter
         
-        return CGRect(x: CGFloat.random(in: 0..<width-diameter), y: CGFloat.random(in: 0+diameter/2...height-80), width: diameter, height: diameter)
+        return CGRect(x: CGFloat.random(in: 0..<width - diameter), y: CGFloat.random(in: 0 + diameter / 2...height - 80), width: diameter, height: diameter)
     }
     
     private func generateSizeForButton() -> CGFloat{

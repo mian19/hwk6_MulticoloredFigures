@@ -51,7 +51,7 @@ class Task2ViewController:  UIViewController {
     override func viewWillLayoutSubviews() {
         viewForSquares.frame = CGRect(x: view.safeAreaLayoutGuide.layoutFrame.minX, y: view.safeAreaLayoutGuide.layoutFrame.minY, width: view.bounds.width, height: view.bounds.maxY - 70)
         
-        backButton.frame = CGRect(x: view.bounds.midX-170, y: view.bounds.maxY - 45, width: 100, height: 40)
+        backButton.frame = CGRect(x: view.bounds.midX - 170, y: view.bounds.maxY - 45, width: 100, height: 40)
         let fillButtonRect = backButton.frame.offsetBy(dx: 120, dy: 0)
         fillButton.frame = fillButtonRect
         
@@ -83,18 +83,18 @@ class Task2ViewController:  UIViewController {
         while isEmptyPlace {
             square = UIView(frame: CGRect(x: x, y: y, width: 50, height: 50))
             square.backgroundColor = generateColor()
-            if x < maxX && y < maxY && (maxY-y) >= square.frame.height {
+            if x < maxX && y < maxY && (maxY - y) >= square.frame.height {
                 viewForSquares.addSubview(square)
                 x += square.frame.width
-            } else if x < maxX && (maxY-y) < square.frame.height {
-                square.frame.size = CGSize(width: 50, height: maxY-y)
+            } else if x < maxX && (maxY - y) < square.frame.height {
+                square.frame.size = CGSize(width: 50, height: maxY - y)
                 viewForSquares.addSubview(square)
                 x += square.frame.width
             }
-            else if x >= maxX && y < maxY-square.frame.height {
+            else if x >= maxX && y < maxY - square.frame.height {
                 x = viewForSquares.frame.minX
                 y += square.frame.height
-            } else if y >= maxY-square.frame.height {
+            } else if y >= maxY - square.frame.height {
                 isEmptyPlace.toggle()
             }
         }

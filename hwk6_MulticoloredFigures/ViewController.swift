@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        task1Button.frame = CGRect(x: view.bounds.midX-75, y: view.bounds.midY-140, width: 150, height: 80)
+        task1Button.frame = CGRect(x: view.bounds.midX - 75, y: view.bounds.midY - 140, width: 150, height: 80)
         
         let task2ButtonRect = task1Button.frame.offsetBy(dx: 0, dy: 100)
         task2Button.frame = task2ButtonRect
