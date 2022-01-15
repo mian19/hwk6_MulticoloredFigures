@@ -25,7 +25,7 @@ class Task1ViewController: UIViewController {
         button.backgroundColor = .red
         button.addTarget(self, action: #selector(onButtonClick), for: .touchUpInside)
         
-        backButton = UIButton(frame: CGRect(x: view.bounds.midX-50, y: view.bounds.maxY-80, width: 100, height: 40))
+        backButton = UIButton()
         backButton.setTitle("Back", for: .normal)
         backButton.backgroundColor = .black
         backButton.addTarget(self, action: #selector(onBackButtonClick), for: .touchUpInside)
@@ -40,6 +40,8 @@ class Task1ViewController: UIViewController {
         button.layer.cornerRadius = button.frame.width / 2
         button.layer.masksToBounds = true
         button.backgroundColor = generateColor()
+        
+        backButton.frame = CGRect(x: view.bounds.midX-50, y: view.bounds.maxY-80, width: 100, height: 40)
     }
     
     @objc func onButtonClick(button: UIButton) {
@@ -66,7 +68,7 @@ class Task1ViewController: UIViewController {
     }
     
     private func generateSizeForButton() -> CGFloat{
-        CGFloat.random(in: 100...200)
+        CGFloat.random(in: 100...150)
     }
     
 }
