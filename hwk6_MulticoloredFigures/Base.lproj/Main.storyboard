@@ -16,7 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.99969023469999996" green="0.92460852859999998" blue="0.48210191730000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -37,7 +36,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N0U-LS-ABM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2013.0434782608697" y="69.642857142857139"/>
+            <point key="canvasLocation" x="668" y="70"/>
+        </scene>
+        <!--Task2 View Controller-->
+        <scene sceneID="TvF-jc-7Kz">
+            <objects>
+                <viewController storyboardIdentifier="Task2" id="4tu-wD-Oph" customClass="Task2ViewController" customModule="hwk6_MulticoloredFigures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2qm-om-OXv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XH5-D8-jUt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uyn-J0-diz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1332" y="70"/>
+        </scene>
+        <!--Task3 View Controller-->
+        <scene sceneID="r1s-FJ-m1M">
+            <objects>
+                <viewController storyboardIdentifier="Task3" id="1Vl-Zg-6Ae" customClass="Task3ViewController" customModule="hwk6_MulticoloredFigures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2g1-6b-qlX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="nAb-52-887"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8t-Zv-Nyg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="70"/>
         </scene>
     </scenes>
     <resources>

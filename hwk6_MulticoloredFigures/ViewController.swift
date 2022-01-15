@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     var task2Button: UIButton!
     var task3Button: UIButton!
     lazy var task1VC: Task1ViewController = getTask1VC()
-   // lazy var task2VC: Task2ViewController = getTask2VC()
-   // lazy var task3VC = getTask3VC()
+    lazy var task2VC: Task2ViewController = getTask2VC()
+    lazy var task3VC: Task3ViewController = getTask3VC()
     
     override func loadView() {
         customView = UIView(frame: UIScreen.main.bounds)
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         task1Button.addTarget(self, action: #selector(onTask1Button), for: .touchUpInside)
         
         task2Button = UIButton()
-        var task2ButtonRect = task1Button.frame.offsetBy(dx: 0, dy: 100)
+        let task2ButtonRect = task1Button.frame.offsetBy(dx: 0, dy: 100)
         task2Button.frame = task2ButtonRect
         task2Button.backgroundColor = .systemYellow
         task2Button.setTitle("Task 2", for: .normal)
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         task2Button.addTarget(self, action: #selector(onTask2Button), for: .touchUpInside)
         
         task3Button = UIButton()
-        var task3ButtonRect = task2Button.frame.offsetBy(dx: 0, dy: 100)
+        let task3ButtonRect = task2Button.frame.offsetBy(dx: 0, dy: 100)
         task3Button.frame = task3ButtonRect
         task3Button.backgroundColor = .systemYellow
         task3Button.setTitle("Task 3", for: .normal)
@@ -59,11 +59,11 @@ class ViewController: UIViewController {
     }
     
     @objc func onTask2Button() {
-        
+        self.present(task2VC, animated: true, completion: nil)
     }
     
     @objc func onTask3Button() {
-        
+        self.present(task3VC, animated: true, completion: nil)
     }
     
     private func getTask1VC() -> Task1ViewController {
@@ -71,6 +71,20 @@ class ViewController: UIViewController {
         let viewC = storyboard.instantiateViewController(withIdentifier: "Task1")
         viewC.modalPresentationStyle = .fullScreen
         return viewC as! Task1ViewController
+    }
+    
+    private func getTask2VC() -> Task2ViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewC = storyboard.instantiateViewController(withIdentifier: "Task2")
+        viewC.modalPresentationStyle = .fullScreen
+        return viewC as! Task2ViewController
+    }
+    
+    private func getTask3VC() -> Task3ViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewC = storyboard.instantiateViewController(withIdentifier: "Task3")
+        viewC.modalPresentationStyle = .fullScreen
+        return viewC as! Task3ViewController
     }
 
     

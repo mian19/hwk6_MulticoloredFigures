@@ -15,6 +15,7 @@
 		670993D4278FFC490056F916 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 670993D2278FFC490056F916 /* LaunchScreen.storyboard */; };
 		670993DE27900C240056F916 /* Task1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670993DD27900C240056F916 /* Task1ViewController.swift */; };
 		675B1AD72791736400B0D4A2 /* Task2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B1AD62791736400B0D4A2 /* Task2ViewController.swift */; };
+		675B1AD927919BAD00B0D4A2 /* Task3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B1AD827919BAC00B0D4A2 /* Task3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		670993D5278FFC490056F916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		670993DD27900C240056F916 /* Task1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task1ViewController.swift; sourceTree = "<group>"; };
 		675B1AD62791736400B0D4A2 /* Task2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task2ViewController.swift; sourceTree = "<group>"; };
+		675B1AD827919BAC00B0D4A2 /* Task3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				670993CB278FFC470056F916 /* ViewController.swift */,
 				670993DD27900C240056F916 /* Task1ViewController.swift */,
 				675B1AD62791736400B0D4A2 /* Task2ViewController.swift */,
+				675B1AD827919BAC00B0D4A2 /* Task3ViewController.swift */,
 				670993CD278FFC470056F916 /* Main.storyboard */,
 				670993D0278FFC490056F916 /* Assets.xcassets */,
 				670993D2278FFC490056F916 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				675B1AD72791736400B0D4A2 /* Task2ViewController.swift in Sources */,
+				675B1AD927919BAD00B0D4A2 /* Task3ViewController.swift in Sources */,
 				670993CC278FFC470056F916 /* ViewController.swift in Sources */,
 				670993C8278FFC470056F916 /* AppDelegate.swift in Sources */,
 				670993CA278FFC470056F916 /* SceneDelegate.swift in Sources */,

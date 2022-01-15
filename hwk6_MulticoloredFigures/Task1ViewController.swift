@@ -53,19 +53,20 @@ class Task1ViewController: UIViewController {
         self.dismiss(animated: true, completion: .none)
     }
     
-    private func generateCoordinatesForButton() -> CGRect{
-        let width = view.safeAreaLayoutGuide.layoutFrame.size.width
-        let height = view.safeAreaLayoutGuide.layoutFrame.size.height
-        let diameter = generateSizeForButton()
-        return CGRect(x: Int.random(in: 0..<Int(width)-diameter), y: Int.random(in: 0+diameter/2...Int(height)-diameter), width: diameter, height: diameter)
-    }
-    
-    private func generateSizeForButton() -> Int{
-        Int.random(in: 100...200)
-    }
-    
     private func generateColor() -> UIColor {
         UIColor(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: 1.0)
+    }
+    
+    private func generateCoordinatesForButton() -> CGRect{
+        let diameter = generateSizeForButton()
+        let width = view.bounds.maxX
+        let height = view.bounds.maxY - diameter
+        
+        return CGRect(x: CGFloat.random(in: 0..<width-diameter), y: CGFloat.random(in: 0+diameter/2...height-80), width: diameter, height: diameter)
+    }
+    
+    private func generateSizeForButton() -> CGFloat{
+        CGFloat.random(in: 100...200)
     }
     
 }
