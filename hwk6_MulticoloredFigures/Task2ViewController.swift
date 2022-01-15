@@ -49,9 +49,13 @@ class Task2ViewController:  UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        viewForSquares.frame = CGRect(x: view.safeAreaLayoutGuide.layoutFrame.minX, y: view.safeAreaLayoutGuide.layoutFrame.minY, width: view.bounds.width, height: view.bounds.maxY - 70)
+        if (viewForSquares.frame.width < viewForSquares.frame.height) {
+            viewForSquares.frame = CGRect(x: view.safeAreaLayoutGuide.layoutFrame.minX, y: view.safeAreaLayoutGuide.layoutFrame.minY, width: view.bounds.width, height: view.bounds.maxY - 110)
+        } else {
+            viewForSquares.frame = CGRect(x: view.safeAreaLayoutGuide.layoutFrame.minX, y: view.safeAreaLayoutGuide.layoutFrame.minY, width: view.safeAreaLayoutGuide.layoutFrame.size.width, height: view.bounds.maxY - 70)
+        }
         
-        backButton.frame = CGRect(x: view.bounds.midX - 170, y: view.bounds.maxY - 45, width: 100, height: 40)
+        backButton.frame = CGRect(x: view.bounds.midX - 170, y: view.bounds.maxY - 55, width: 100, height: 40)
         let fillButtonRect = backButton.frame.offsetBy(dx: 120, dy: 0)
         fillButton.frame = fillButtonRect
         
@@ -83,20 +87,23 @@ class Task2ViewController:  UIViewController {
         while isEmptyPlace {
             square = UIView(frame: CGRect(x: x, y: y, width: 50, height: 50))
             square.backgroundColor = generateColor()
-            if x < maxX && y < maxY && (maxY - y) >= square.frame.height {
+            if (maxY - y) >= square.frame.height && (maxX - x) >= square.frame.width {
                 viewForSquares.addSubview(square)
                 x += square.frame.width
-            } else if x < maxX && (maxY - y) < square.frame.height {
+            } else if (maxX - x) < square.frame.width && (maxY - y) >= square.frame.height  {
+                square.frame.size = CGSize(width: maxX - x, height: 50)
+                viewForSquares.addSubview(square)
+                x = viewForSquares.bounds.minX
+                y += square.frame.height
+            } else if (maxY - y) < square.frame.height && (maxX - x) >= square.frame.width {
                 square.frame.size = CGSize(width: 50, height: maxY - y)
                 viewForSquares.addSubview(square)
                 x += square.frame.width
-            }
-            else if x >= maxX && y < maxY - square.frame.height {
-                x = viewForSquares.frame.minX
-                y += square.frame.height
-            } else if y >= maxY - square.frame.height {
+            } else if (maxY - y) < square.frame.height && (maxX - x) < square.frame.width {
+                square.frame.size = CGSize(width: maxX - x, height: maxY - y)
+                viewForSquares.addSubview(square)
                 isEmptyPlace.toggle()
-            }
+           }
         }
     }
     

@@ -98,7 +98,6 @@ class Task3ViewController: UIViewController {
         if circle.frame.minY > viewForCircle.frame.minY + 10 {
             circle.frame.origin.y -= 10
         } else if circle.frame.minY >= viewForCircle.bounds.minY {
-            print(viewForCircle.bounds.minY)
             circle.frame.origin.y = viewForCircle.frame.minY
         }
     }
