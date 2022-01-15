@@ -25,7 +25,7 @@ class Task2ViewController:  UIViewController {
         viewForSquares = UIView()
         viewForSquares.backgroundColor = .white
         
-        backButton = UIButton(frame: CGRect(x: view.bounds.midX-170, y: view.bounds.maxY - 80, width: 100, height: 40))
+        backButton = UIButton(frame: CGRect(x: view.bounds.midX-170, y: view.bounds.maxY - 70, width: 100, height: 40))
         backButton.setTitle("Back", for: .normal)
         backButton.backgroundColor = .black
         backButton.addTarget(self, action: #selector(onBackButton), for: .touchUpInside)
