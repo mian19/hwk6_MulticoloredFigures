@@ -88,7 +88,6 @@ class Task3ViewController: UIViewController {
     
     @objc func onLeftButton() {
         if circle.frame.minX > viewForCircle.bounds.minX + 10 {
-            
             circle.frame.origin.x -= 10
         } else if circle.frame.minX >= viewForCircle.bounds.minX {
             circle.frame.origin.x = 0
@@ -97,11 +96,7 @@ class Task3ViewController: UIViewController {
     
     @objc func onTopButton() {
         if circle.frame.minY > viewForCircle.frame.minY + 10 {
-            print(circle.frame.minY)
-            print(viewForCircle.frame.minY)
             circle.frame.origin.y -= 10
-            print(circle.frame.origin.y)
-            
         } else if circle.frame.minY >= viewForCircle.bounds.minY {
             print(viewForCircle.bounds.minY)
             circle.frame.origin.y = viewForCircle.frame.minY

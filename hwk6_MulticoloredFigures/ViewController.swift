@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         customView.backgroundColor = UIColor(red: 1.00, green: 0.95, blue: 0.74, alpha: 1.00)
         view = customView
         
-        task1Button = UIButton(frame: CGRect(x: view.bounds.midX-75, y: view.bounds.midY-140, width: 150, height: 80))
+        task1Button = UIButton()
         task1Button.backgroundColor = .systemYellow
         task1Button.setTitle("Task 1", for: .normal)
         task1Button.titleLabel?.font = UIFont(name: "GillSans-Italic", size: 30)
@@ -30,8 +30,6 @@ class ViewController: UIViewController {
         task1Button.addTarget(self, action: #selector(onTask1Button), for: .touchUpInside)
         
         task2Button = UIButton()
-        let task2ButtonRect = task1Button.frame.offsetBy(dx: 0, dy: 100)
-        task2Button.frame = task2ButtonRect
         task2Button.backgroundColor = .systemYellow
         task2Button.setTitle("Task 2", for: .normal)
         task2Button.titleLabel?.font = UIFont(name: "GillSans-Italic", size: 30)
@@ -40,8 +38,6 @@ class ViewController: UIViewController {
         task2Button.addTarget(self, action: #selector(onTask2Button), for: .touchUpInside)
         
         task3Button = UIButton()
-        let task3ButtonRect = task2Button.frame.offsetBy(dx: 0, dy: 100)
-        task3Button.frame = task3ButtonRect
         task3Button.backgroundColor = .systemYellow
         task3Button.setTitle("Task 3", for: .normal)
         task3Button.titleLabel?.font = UIFont(name: "GillSans-Italic", size: 30)
@@ -52,6 +48,16 @@ class ViewController: UIViewController {
         view.addSubview(task1Button)
         view.addSubview(task2Button)
         view.addSubview(task3Button)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        task1Button.frame = CGRect(x: view.bounds.midX-75, y: view.bounds.midY-140, width: 150, height: 80)
+        
+        let task2ButtonRect = task1Button.frame.offsetBy(dx: 0, dy: 100)
+        task2Button.frame = task2ButtonRect
+        
+        let task3ButtonRect = task2Button.frame.offsetBy(dx: 0, dy: 100)
+        task3Button.frame = task3ButtonRect
     }
     
     @objc func onTask1Button() {
