@@ -61,13 +61,19 @@ class Task3ViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        viewForCircle.frame = CGRect(x: view.bounds.minX, y: view.safeAreaLayoutGuide.layoutFrame.minY, width: view.bounds.maxX, height: view.bounds.maxY-70)
+        if (viewForCircle.frame.width < viewForCircle.frame.height) {
+            viewForCircle.frame = CGRect(x: view.safeAreaLayoutGuide.layoutFrame.minX, y: view.safeAreaLayoutGuide.layoutFrame.minY, width: view.bounds.width, height: view.bounds.maxY - 110)
+        } else {
+            viewForCircle.frame = CGRect(x: view.safeAreaLayoutGuide.layoutFrame.minX, y: view.safeAreaLayoutGuide.layoutFrame.minY, width: view.safeAreaLayoutGuide.layoutFrame.size.width, height: view.bounds.maxY - 70)
+        }
+        
+//        viewForCircle.frame = CGRect(x: view.bounds.minX, y: view.safeAreaLayoutGuide.layoutFrame.minY, width: view.bounds.maxX, height: view.bounds.maxY-70)
         
         circle.frame = CGRect(x: viewForCircle.bounds.midX - 100, y: viewForCircle.bounds.midY - 100, width: 200, height: 200)
         circle.layer.cornerRadius = circle.bounds.width / 2
         circle.layer.masksToBounds = true
         
-        backButton.frame = CGRect(x: view.bounds.midX - 180, y: view.bounds.maxY - 45, width: 60, height: 40)
+        backButton.frame = CGRect(x: view.bounds.midX - 180, y: view.bounds.maxY - 55, width: 60, height: 40)
         
         let leftButtonRect = backButton.frame.offsetBy(dx: 75, dy: 0)
         leftButton.frame = leftButtonRect
@@ -87,10 +93,10 @@ class Task3ViewController: UIViewController {
     }
     
     @objc func onLeftButton() {
-        if circle.frame.minX > viewForCircle.bounds.minX + 10 {
+        if circle.frame.minX > viewForCircle.frame.minX + 10 {
             circle.frame.origin.x -= 10
-        } else if circle.frame.minX >= viewForCircle.bounds.minX {
-            circle.frame.origin.x = 0
+        } else if circle.frame.minX <= viewForCircle.frame.minX + 10 {
+            circle.frame.origin.x = viewForCircle.frame.minX
         }
     }
     
@@ -111,10 +117,10 @@ class Task3ViewController: UIViewController {
     }
     
     @objc func onRightButton() {
-        if circle.frame.maxX < viewForCircle.bounds.maxX - 10 {
+        if circle.frame.maxX < viewForCircle.frame.maxX - 10 {
             circle.frame.origin.x += 10
-        } else if circle.frame.maxX <= viewForCircle.bounds.maxX {
-            circle.frame.origin.x = viewForCircle.bounds.maxX - circle.frame.width
+        } else if circle.frame.maxX >= viewForCircle.frame.maxX - 10{
+            circle.frame.origin.x = viewForCircle.frame.maxX - circle.frame.width
         }
     }
 

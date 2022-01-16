@@ -69,7 +69,6 @@ class Task2ViewController:  UIViewController {
             }
             onFillButton()
         }
-       
     }
     
     @objc func onBackButton() {
@@ -88,22 +87,19 @@ class Task2ViewController:  UIViewController {
             square = UIView(frame: CGRect(x: x, y: y, width: 50, height: 50))
             square.backgroundColor = generateColor()
             if (maxY - y) >= square.frame.height && (maxX - x) >= square.frame.width {
-                viewForSquares.addSubview(square)
                 x += square.frame.width
             } else if (maxX - x) < square.frame.width && (maxY - y) >= square.frame.height  {
                 square.frame.size = CGSize(width: maxX - x, height: 50)
-                viewForSquares.addSubview(square)
                 x = viewForSquares.bounds.minX
                 y += square.frame.height
             } else if (maxY - y) < square.frame.height && (maxX - x) >= square.frame.width {
                 square.frame.size = CGSize(width: 50, height: maxY - y)
-                viewForSquares.addSubview(square)
                 x += square.frame.width
             } else if (maxY - y) < square.frame.height && (maxX - x) < square.frame.width {
                 square.frame.size = CGSize(width: maxX - x, height: maxY - y)
-                viewForSquares.addSubview(square)
                 isEmptyPlace.toggle()
-           }
+            }
+            viewForSquares.addSubview(square)
         }
     }
     
