@@ -100,6 +100,7 @@ class Task3ViewController: UIViewController {
         }
     }
     
+    
     @objc func onTopButton() {
         if circle.frame.minY > viewForCircle.frame.minY + 10 {
             circle.frame.origin.y -= 10
